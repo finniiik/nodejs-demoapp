@@ -47,7 +47,7 @@ const sessionConfig = {
   secret: packageJson.name,
   cookie: { secure: false },
   resave: false,
-  saveUninitialized: false,
+  saveUnitialized: false,
 }
 
 // Very optional Redis session store - only really needed when running multiple instances
@@ -106,7 +106,7 @@ if (process.env.ENTRA_APP_ID) {
 }
 
 // Optional routes based on certain settings/features being enabled
-if (process.env.TODO_MONGO_CONNSTR) {
+if (process.env.TODO_MONGO_CONSTR) {
   app.use('/', todoRoutes)
 }
 
@@ -147,7 +147,7 @@ app.use(function (err, req, res, next) {
 const port = process.env.PORT || 3000
 
 // Start the server
-app.listen(port
+app.listen(port)
 console.log(`### 🌐 Server listening on port ${port}`)
 
 export default app
